@@ -1,0 +1,499 @@
+<!doctype html>
+<html lang="az">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tiens Azerbaijan - Müştəri Girişi</title>
+    <!-- İkonlar üçün FontAwesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- Premium Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* ── MÜASİR EKOLOGİK-LÜKS AYARLAR ── */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Plus Jakarta Sans", sans-serif;
+      }
+
+      body {
+        background-color: #f4fcf9;
+        color: #1e293b;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow-x: hidden;
+        position: relative;
+        padding: 20px;
+      }
+
+      /* ── SPIDER WEB CANVAS ── */
+      #spiderWebCanvas {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: -1;
+        pointer-events: none;
+        display: block;
+      }
+
+      /* ── PREMIUM ŞÜŞƏ EFFEKTLİ MÜŞTƏRİ GİRİŞ KARTI ── */
+      .login-container {
+        background: rgba(255, 255, 255, 0.75);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(16, 185, 129, 0.15);
+        padding: 40px;
+        border-radius: 32px;
+        width: 100%;
+        max-width: 440px;
+        box-shadow: 0 25px 50px rgba(16, 185, 129, 0.05);
+        text-align: center;
+        position: relative;
+        transform: translateY(20px);
+        opacity: 0;
+        animation: fadeInUp 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+      }
+
+      @keyframes fadeInUp {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Geri Qayıt Düyməsi (Sol Üstdə) */
+      .btn-close-back {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: rgba(16, 185, 129, 0.06);
+        border: 1px solid rgba(16, 185, 129, 0.1);
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #10b981;
+        text-decoration: none;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+      }
+      .btn-close-back:hover {
+        background: #ef4444;
+        color: #ffffff;
+        border-color: transparent;
+        transform: rotate(90deg);
+      }
+
+      /* Loqo və Başlıq */
+      .login-header {
+        margin-bottom: 30px;
+      }
+      .login-header i {
+        font-size: 2.3rem;
+        color: #10b981;
+        margin-bottom: 12px;
+        background: linear-gradient(135deg, #10b981, #059669);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .login-header h1 {
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: #0f172a;
+        letter-spacing: -0.5px;
+      }
+      .login-header p {
+        font-size: 0.88rem;
+        color: #64748b;
+        margin-top: 4px;
+      }
+
+      /* Giriş Sahələri (Inputs) */
+      .input-group {
+        position: relative;
+        margin-bottom: 20px;
+        text-align: left;
+      }
+      .input-group label {
+        display: block;
+        font-size: 0.8rem;
+        font-weight: 700;
+        color: #475569;
+        margin-bottom: 6px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+      .input-wrapper {
+        position: relative;
+      }
+      .input-wrapper .main-icon {
+        position: absolute;
+        left: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #94a3b8;
+        font-size: 1rem;
+        transition: color 0.3s;
+      }
+      
+      /* PAROL GÖSTƏRMƏ/GİZLƏTMƏ */
+      .toggle-password {
+        position: absolute;
+        right: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #94a3b8;
+        cursor: pointer;
+        font-size: 1rem;
+        transition: color 0.2s;
+        user-select: none;
+      }
+      .toggle-password:hover {
+        color: #10b981;
+      }
+
+      .input-control {
+        width: 100%;
+        padding: 14px 40px 14px 46px;
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-radius: 14px;
+        font-size: 0.95rem;
+        color: #1e293b;
+        outline: none;
+        transition: all 0.3s ease;
+      }
+      .input-control:focus {
+        border-color: #10b981;
+        box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.1);
+      }
+      .input-control:focus + .main-icon {
+        color: #10b981;
+      }
+
+      /* Seçimlər */
+      .login-options {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.85rem;
+        margin-bottom: 25px;
+      }
+      .remember-me {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: #475569;
+        cursor: pointer;
+      }
+      .remember-me input {
+        accent-color: #10b981;
+        width: 16px;
+        height: 16px;
+        cursor: pointer;
+      }
+      .forgot-pass {
+        color: #10b981;
+        text-decoration: none;
+        font-weight: 600;
+      }
+      .forgot-pass:hover {
+        text-decoration: underline;
+      }
+
+      /* Əsas Giriş Düyməsi */
+      .btn-submit {
+        width: 100%;
+        background: linear-gradient(135deg, #10b981, #059669);
+        color: white;
+        border: none;
+        padding: 14px;
+        border-radius: 14px;
+        font-size: 1rem;
+        font-weight: 700;
+        cursor: pointer;
+        box-shadow: 0 6px 20px rgba(16, 185, 129, 0.25);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        transition: all 0.3s ease;
+      }
+      .btn-submit:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
+      }
+
+      /* SOSİAL GİRİŞLƏR */
+      .social-divider {
+        display: flex;
+        align-items: center;
+        text-align: center;
+        margin: 25px 0;
+        color: #94a3b8;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+      .social-divider::before, .social-divider::after {
+        content: '';
+        flex: 1;
+        border-bottom: 1px solid #e2e8f0;
+      }
+      .social-divider:not(:empty)::before { margin-right: .5em; }
+      .social-divider:not(:empty)::after { margin-left: .5em; }
+
+      .social-login-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+        margin-bottom: 30px;
+      }
+      .btn-social {
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
+        padding: 12px;
+        border-radius: 14px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        transition: all 0.25s ease;
+      }
+      .btn-social.google { color: #ea4335; }
+      .btn-social.apple { color: #000000; }
+      .btn-social.microsoft { color: #00a4ef; }
+
+      .btn-social:hover {
+        background: #f8fafc;
+        border-color: #cbd5e1;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+      }
+
+      /* QEYDİYYATDAN KEÇ KEÇİDİ */
+      .register-prompt {
+        font-size: 0.9rem;
+        color: #64748b;
+        font-weight: 500;
+      }
+      .register-prompt a {
+        color: #10b981;
+        text-decoration: none;
+        font-weight: 700;
+        transition: color 0.2s;
+        margin-left: 4px;
+      }
+      .register-prompt a:hover {
+        color: #059669;
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- ARXA PLAN CANVAS ANIMASIYASI -->
+    <canvas id="spiderWebCanvas"></canvas>
+
+    <!-- MÜŞTƏRİ GİRİŞ PANELİ -->
+    <div class="login-container">
+      <a href="index.html" class="btn-close-back" aria-label="Bağla">
+        <i class="fas fa-times"></i>
+      </a>
+
+      <div class="login-header">
+        <i class="fas fa-user-circle"></i>
+        <h1>Müştəri Girişi</h1>
+        <p>Sifarişlərinizi izləmək və xüsusi endirimlərdən yararlanmaq üçün daxil olun</p>
+      </div>
+
+      <form onsubmit="event.preventDefault(); alert('Müştəri paneli test rejimindədir.');">
+        <!-- Email və ya Telefon -->
+        <div class="input-group">
+          <label for="username">Email və ya Telefon</label>
+          <div class="input-wrapper">
+            <input
+              type="text"
+              id="username"
+              class="input-control"
+              placeholder="nümunə@mail.com / +994"
+              required
+            />
+            <i class="fas fa-envelope main-icon"></i>
+          </div>
+        </div>
+
+        <!-- Şifrə -->
+        <div class="input-group">
+          <label for="password">Şifrə</label>
+          <div class="input-wrapper">
+            <input
+              type="password"
+              id="password"
+              class="input-control"
+              placeholder="••••••••"
+              required
+            />
+            <i class="fas fa-lock main-icon"></i>
+            <!-- Göz Ikonu -->
+            <i class="fas fa-eye toggle-password" id="togglePasswordIcon"></i>
+          </div>
+        </div>
+
+        <!-- Seçimlər -->
+        <div class="login-options">
+          <label class="remember-me">
+            <input type="checkbox" id="remember" />
+            <span>Məni xatırla</span>
+          </label>
+          <a href="#" class="forgot-pass">Şifrəni unutmusunuz?</a>
+        </div>
+
+        <!-- Düymə -->
+        <button type="submit" class="btn-submit">
+          Hesaba daxil ol <i class="fas fa-sign-in-alt"></i>
+        </button>
+      </form>
+
+      <!-- Sosial Giriş Bölməsi -->
+      <div class="social-divider">və ya sürətli giriş</div>
+      
+      <div class="social-login-grid">
+        <button class="btn-social google" onclick="alert('Google ilə giriş tezliklə...')">
+          <i class="fab fa-google"></i>
+        </button>
+        <button class="btn-social apple" onclick="alert('Apple ilə giriş tezliklə...')">
+          <i class="fab fa-apple"></i>
+        </button>
+        <button class="btn-social microsoft" onclick="alert('Microsoft ilə giriş tezliklə...')">
+          <i class="fab fa-microsoft"></i>
+        </button>
+      </div>
+
+      <!-- Qeydiyyat promptu -->
+      <div class="register-prompt">
+        İlk dəfə gəlirsiniz? <a href="./customer-register.html" onclick="alert('Müştəri qeydiyyat sistemi tezliklə aktivləşəcək.')">Hesab yarat</a>
+      </div>
+    </div>
+
+    <!-- MOUSE TRACKER SPIDER WEB JS -->
+    <script>
+      // ── PAROL GÖSTƏRMƏ / GİZLƏTMƏ LOGİKASI ──
+      const passwordInput = document.getElementById("password");
+      const togglePasswordIcon = document.getElementById("togglePasswordIcon");
+
+      if (passwordInput && togglePasswordIcon) {
+        togglePasswordIcon.addEventListener("click", function () {
+          const type = passwordInput.getAttribute("type") === "password" ? "text" : "password";
+          passwordInput.setAttribute("type", type);
+          
+          this.classList.toggle("fa-eye");
+          this.classList.toggle("fa-eye-slash");
+        });
+      }
+
+      // ── INTERAKTIV MOUSE TRACKER SPIDER WEB ANIMASIYASI ──
+      const canvas = document.getElementById("spiderWebCanvas");
+      if (canvas) {
+        const ctx = canvas.getContext("2d");
+        let particles = [];
+        const particleCount = 75;
+        const connectionRadius = 145;
+        let mouse = { x: null, y: null, radius: 180 };
+
+        window.addEventListener("mousemove", (e) => { mouse.x = e.clientX; mouse.y = e.clientY; });
+        window.addEventListener("mouseleave", () => { mouse.x = null; mouse.y = null; });
+
+        function adjustCanvasSize() {
+          canvas.width = window.innerWidth;
+          canvas.height = window.innerHeight;
+        }
+        window.addEventListener("resize", adjustCanvasSize);
+        adjustCanvasSize();
+
+        class Particle {
+          constructor() {
+            this.x = Math.random() * canvas.width;
+            this.y = Math.random() * canvas.height;
+            this.speedX = (Math.random() - 0.5) * 0.6;
+            this.speedY = (Math.random() - 0.5) * 0.6;
+            this.size = Math.random() * 2 + 1.5;
+          }
+          move() {
+            this.x += this.speedX;
+            this.y += this.speedY;
+            if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
+            if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
+
+            if (mouse.x !== null && mouse.y !== null) {
+              let dx = mouse.x - this.x;
+              let dy = mouse.y - this.y;
+              let dist = Math.hypot(dx, dy);
+              if (dist < mouse.radius) {
+                this.x += (dx / dist) * 0.4;
+                this.y += (dy / dist) * 0.4;
+              }
+            }
+          }
+          render() {
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+            ctx.fillStyle = "rgba(16, 185, 129, 0.45)";
+            ctx.fill();
+          }
+        }
+
+        for (let i = 0; i < particleCount; i++) particles.push(new Particle());
+
+        function drawWebStructure() {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          particles.forEach(p => { p.move(); p.render(); });
+
+          for (let i = 0; i < particles.length; i++) {
+            for (let j = i + 1; j < particles.length; j++) {
+              let distance = Math.hypot(particles[i].x - particles[j].x, particles[i].y - particles[j].y);
+              if (distance < connectionRadius) {
+                let opacity = (1 - distance / connectionRadius) * 0.25;
+                ctx.beginPath();
+                ctx.moveTo(particles[i].x, particles[i].y);
+                ctx.lineTo(particles[j].x, particles[j].y);
+                ctx.strokeStyle = `rgba(16, 185, 129, ${opacity})`;
+                ctx.lineWidth = 0.9;
+                ctx.stroke();
+              }
+            }
+            if (mouse.x !== null && mouse.y !== null) {
+              let mouseDist = Math.hypot(particles[i].x - mouse.x, particles[i].y - mouse.y);
+              if (mouseDist < mouse.radius) {
+                let mouseOpacity = (1 - mouseDist / mouse.radius) * 0.3;
+                ctx.beginPath();
+                ctx.moveTo(particles[i].x, particles[i].y);
+                ctx.lineTo(mouse.x, mouse.y);
+                ctx.strokeStyle = `rgba(16, 185, 129, ${mouseOpacity})`;
+                ctx.lineWidth = 1.0;
+                ctx.stroke();
+              }
+            }
+          }
+          requestAnimationFrame(drawWebStructure);
+        }
+        drawWebStructure();
+      }
+    </script>
+  </body>
+</html>

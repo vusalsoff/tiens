@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="az">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tiens Azerbaijan - Distribütor Qeydiyyatı</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Plus Jakarta Sans", sans-serif;
+      }
+      body {
+        background-color: #f4fcf9;
+        color: #1e293b;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow-x: hidden;
+        position: relative;
+        padding: 20px;
+      }
+      #spiderWebCanvas {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: -1;
+        pointer-events: none;
+        display: block;
+      }
+      .register-container {
+        background: rgba(255, 255, 255, 0.75);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(16, 185, 129, 0.15);
+        padding: 40px;
+        border-radius: 32px;
+        width: 100%;
+        max-width: 480px;
+        box-shadow: 0 25px 50px rgba(16, 185, 129, 0.05);
+        text-align: center;
+        position: relative;
+        transform: translateY(20px);
+        opacity: 0;
+        animation: fadeInUp 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+      }
+      @keyframes fadeInUp {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .btn-close-back {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: rgba(16, 185, 129, 0.06);
+        border: 1px solid rgba(16, 185, 129, 0.1);
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #10b981;
+        text-decoration: none;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+      }
+      .btn-close-back:hover {
+        background: #ef4444;
+        color: #ffffff;
+        border-color: transparent;
+        transform: rotate(90deg);
+      }
+      .register-header {
+        margin-bottom: 25px;
+      }
+      .register-header i {
+        font-size: 2.3rem;
+        color: #10b981;
+        margin-bottom: 12px;
+        background: linear-gradient(135deg, #10b981, #059669);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .register-header h1 {
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: #0f172a;
+        letter-spacing: -0.5px;
+      }
+      .register-header p {
+        font-size: 0.88rem;
+        color: #64748b;
+        margin-top: 4px;
+      }
+      .input-group {
+        position: relative;
+        margin-bottom: 18px;
+        text-align: left;
+      }
+      .input-group label {
+        display: block;
+        font-size: 0.8rem;
+        font-weight: 700;
+        color: #475569;
+        margin-bottom: 6px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+      .input-wrapper {
+        position: relative;
+      }
+      .input-wrapper .main-icon {
+        position: absolute;
+        left: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #94a3b8;
+        font-size: 1rem;
+        transition: color 0.3s;
+      }
+      .toggle-password {
+        position: absolute;
+        right: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #94a3b8;
+        cursor: pointer;
+        font-size: 1rem;
+        transition: color 0.2s;
+        user-select: none;
+      }
+      .toggle-password:hover {
+        color: #10b981;
+      }
+      .input-control {
+        width: 100%;
+        padding: 14px 40px 14px 46px;
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-radius: 14px;
+        font-size: 0.95rem;
+        color: #1e293b;
+        outline: none;
+        transition: all 0.3s ease;
+      }
+      .input-control:focus {
+        border-color: #10b981;
+        box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.1);
+      }
+      .input-control:focus + .main-icon {
+        color: #10b981;
+      }
+      .btn-submit {
+        width: 100%;
+        background: linear-gradient(135deg, #10b981, #059669);
+        color: white;
+        border: none;
+        padding: 14px;
+        border-radius: 14px;
+        font-size: 1rem;
+        font-weight: 700;
+        cursor: pointer;
+        box-shadow: 0 6px 20px rgba(16, 185, 129, 0.25);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        transition: all 0.3s ease;
+      }
+      .btn-submit:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
+      }
+      .login-prompt {
+        font-size: 0.9rem;
+        color: #64748b;
+        font-weight: 500;
+        margin-top: 25px;
+      }
+      .login-prompt a {
+        color: #10b981;
+        text-decoration: none;
+        font-weight: 700;
+      }
+      .login-prompt a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="spiderWebCanvas"></canvas>
+    <div class="register-container">
+      <a href="login.html" class="btn-close-back"
+        ><i class="fas fa-times"></i
+      ></a>
+      <div class="register-header">
+        <i class="fas fa-shield-halved"></i>
+        <h1>Distribütor Müraciəti</h1>
+        <p>Jale Plaza "Uğur Sistemi" karyera və seçim turu qeydiyyatı</p>
+      </div>
+      <form
+        onsubmit="
+          event.preventDefault();
+          alert(
+            'Distribütor seçim müraciətiniz qəbul olundu. Ofis meneceri tezliklə əlaqə saxlayacaq.',
+          );
+        "
+      >
+        <div class="input-group">
+          <label for="sponsor">Dəvət edən Distribütor ID (Sponsor)</label>
+          <div class="input-wrapper">
+            <input
+              type="text"
+              id="sponsor"
+              class="input-control"
+              placeholder="Məsələn: 994XXXXX (Yoxdursa boş buraxın)"
+            />
+            <i class="fas fa-network-wired main-icon"></i>
+          </div>
+        </div>
+        <div
+          class="input-grid-2"
+          style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px"
+        >
+          <div class="input-group">
+            <label for="name">Ad</label>
+            <div class="input-wrapper">
+              <input
+                type="text"
+                id="name"
+                class="input-control"
+                style="padding-left: 20px"
+                placeholder="Adınız"
+                required
+              />
+            </div>
+          </div>
+          <div class="input-group">
+            <label for="surname">Soyad</label>
+            <div class="input-wrapper">
+              <input
+                type="text"
+                id="surname"
+                class="input-control"
+                style="padding-left: 20px"
+                placeholder="Soyadınız"
+                required
+              />
+            </div>
+          </div>
+        </div>
+        <div class="input-group">
+          <label for="phone">Əlaqə Nömrəsi</label>
+          <div class="input-wrapper">
+            <input
+              type="tel"
+              id="phone"
+              class="input-control"
+              placeholder="+994"
+              required
+            />
+            <i class="fas fa-phone main-icon"></i>
+          </div>
+        </div>
+        <div class="input-group">
+          <label for="password">Panel Şifrəsi</label>
+          <div class="input-wrapper">
+            <input
+              type="password"
+              id="password"
+              class="input-control"
+              placeholder="••••••••"
+              required
+            />
+            <i class="fas fa-lock main-icon"></i>
+            <i class="fas fa-eye toggle-password" id="togglePasswordIcon"></i>
+          </div>
+        </div>
+        <button type="submit" class="btn-submit">
+          Seçim Turuna Müraciət Et <i class="fas fa-paper-plane"></i>
+        </button>
+      </form>
+      <div class="login-prompt">
+        Artıq distribütorsunuz? <a href="./login.html">Ofis Girişi</a>
+      </div>
+    </div>
+    <script>
+      const passwordInput = document.getElementById("password");
+      const togglePasswordIcon = document.getElementById("togglePasswordIcon");
+      if (passwordInput && togglePasswordIcon) {
+        togglePasswordIcon.addEventListener("click", function () {
+          const type =
+            passwordInput.getAttribute("type") === "password"
+              ? "text"
+              : "password";
+          passwordInput.setAttribute("type", type);
+          this.classList.toggle("fa-eye");
+          this.classList.toggle("fa-eye-slash");
+        });
+      }
+    </script>
+    <script src="custom-web-anim.js"></script>
+  </body>
+</html>

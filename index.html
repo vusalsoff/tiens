@@ -1,0 +1,590 @@
+<!doctype html>
+<html lang="az">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tiens Azerbaijan - Rəsmi Təmsilçi</title>
+    <!-- İkonlar üçün FontAwesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- Premium Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./src/css/style.css" />
+  </head>
+  <body>
+    <!-- ── ULTRA-MODERN HEADER ── -->
+    <header id="mainHeader">
+      <div class="nav-inner">
+        <!-- Loqo hissəsi -->
+        <a class="brand" href="#home">
+          <img src="./src/img/logo.png" alt="Tiens Logo" />
+          <div class="brand-text">
+            <span class="brand-title">Tiens Azerbaijan</span>
+            <span class="brand-sub">Rəsmi sağlamlıq təmsilçisi</span>
+          </div>
+        </a>
+
+        <!-- Professional Naviqasiya -->
+        <nav class="main-nav" id="mainNav">
+          <a href="#about">Haqqımızda</a>
+          <a href="#products">Kataloq</a>
+          <a href="#sets">Setlər</a>
+          <a href="./news.html" class="nav-news-link">📰 Xəbərlər</a>
+          <a href="#contact">Əlaqə</a>
+
+          <div class="nav-divider"></div>
+
+          <!-- PEŞƏKAR BAYRAQLI DİL SEÇİMİ -->
+          <div class="custom-select-wrapper">
+            <div class="custom-select" id="langSelect">
+              <div class="custom-select-trigger" id="langTrigger">
+                <img
+                  src="https://flagcdn.com/w20/az.png"
+                  alt="AZ"
+                  class="flag-icon"
+                />
+                <span>AZ</span>
+                <div class="arrow"></div>
+              </div>
+              <div class="custom-options">
+                <span class="custom-option selected" data-value="az">
+                  <img
+                    src="https://flagcdn.com/w20/az.png"
+                    alt="AZ"
+                    class="flag-icon"
+                  />
+                  Azərbaycan
+                </span>
+                <span class="custom-option" data-value="tr">
+                  <img
+                    src="https://flagcdn.com/w20/tr.png"
+                    alt="TR"
+                    class="flag-icon"
+                  />
+                  Türkçe
+                </span>
+                <span class="custom-option" data-value="en">
+                  <img
+                    src="https://flagcdn.com/w20/gb.png"
+                    alt="EN"
+                    class="flag-icon"
+                  />
+                  English
+                </span>
+                <span class="custom-option" data-value="ru">
+                  <img
+                    src="https://flagcdn.com/w20/ru.png"
+                    alt="RU"
+                    class="flag-icon"
+                  />
+                  Русский
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="nav-divider"></div>
+
+        <div class="nav-actions">
+  <!-- Yalnız Müştəri Girişi -->
+  <a href="customer-login.html" class="btn-login-premium">
+    <div class="btn-shine"></div>
+    <i class="fas fa-user-check"></i> <span>Daxil ol</span>
+  </a>
+</div>
+        </nav>
+
+        <!-- Yenilənmiş Animasiyalı Hamburger Düyməsi -->
+        <button class="hamburger" id="hamburger" aria-label="Menü">
+          <span class="line-1"></span>
+          <span class="line-2"></span>
+          <span class="line-3"></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- ── PREMIUM HERO SECTION ── -->
+    <section class="hero-section" id="home">
+      <div class="hero-content">
+        <!-- Typewriter Başlıq -->
+        <h1 class="typewriter-text">
+          <span id="typewriter"></span><span class="cursor">|</span>
+        </h1>
+
+        <!-- Fade-in Scroll Animasiyalı Alt Mətn -->
+        <div class="fade-in-box">
+          <p class="hero-desc">
+            Jalə Plaza ofisimizdən Azərbaycana rəsmi Tiens məhsulları və
+            sertifikatlı sağlamlıq dəstəyi təqdim edirik.
+          </p>
+          <p class="hero-subdesc">
+            Hər məhsul orijinaldır və xüsusi olaraq sizin üçün seçilmişdir.
+          </p>
+        </div>
+
+        <!-- Professional Düymələr -->
+        <div class="hero-buttons">
+          <a href="#products" class="btn-primary"
+            >Məhsulları İncələ <i class="fas fa-arrow-right"></i
+          ></a>
+          <a href="#contact" class="btn-secondary">Bizimlə Əlaqə</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about-section">
+      <div class="about-container">
+        <div class="section-title-box">
+          <span class="section-badge" data-translate="about_title"
+            >Haqqımızda</span
+          >
+          <h2 class="section-main-title">
+            Şərq Müdrikliyi və Müasir Texnologiya
+          </h2>
+          <div class="title-underline"></div>
+          <p class="section-subtitle" data-translate="about_subtitle">
+            Biz kimik? Azərbaycan üzrə rəsmi Tiens təmsilçisiyik və orijinal
+            məhsulların sürətli çatdırılması ilə WhatsApp-da xidmət göstəririk.
+          </p>
+        </div>
+
+        <div class="about-main-card">
+          <div class="about-grid">
+            <div class="about-copy">
+              <p>
+                <strong>“TİENS” korporasiyası</strong> 1993-cü ildə “Şərqi
+                Asiya”da yaranmışdır. Baş ofisi Tianjin şəhərində yerləşən və
+                tərcümədə <em>“Səma şiri”</em> mənasına gələn korporasiya, qədim
+                Tibet təbabəti əsasında, yeni yüksək texnologiyalardan istifadə
+                etməklə sağlamlaşdırıcı xarakterli təbii məhsulların
+                hazırlanması ilə məşğul olur. İstehsal gücləri dünyanın 5
+                qitəsində (Şimali Amerika, Asiya, Avropa, Avstraliya və Afrika)
+                yerləşən iri bir Holding müəssisəsidir.
+              </p>
+              <p>
+                Azərbaycana 2002-ci ildə Respublikanın Ədliyyə və Səhiyyə
+                Nazirliyinin qeydiyyatından keçərək 99 illik müqavilə ilə
+                gəlmişdir. Məhsulların istehsalı prosesində Şanxay BİO
+                Mühəndislik İnstitutunda hazırlanmış yeni avadanlıqlardan və
+                yüksək <strong>NANO texnologiyalardan</strong> istifadə olunur.
+              </p>
+            </div>
+            <div class="about-visual">
+              <div class="about-img-frame">
+                <img
+                  class="about-image"
+                  src="./src/img/about-section.jpeg"
+                  alt="Tiens haqqında"
+                />
+                <div class="frame-glass-overlay"></div>
+              </div>
+            </div>
+          </div>
+
+          <h3 class="stats-heading" data-translate="about_stats">
+            TİENS şirkəti haqqında rəqəmlər və faktlar
+          </h3>
+
+          <div class="stats-grid">
+            <div class="stat-luxury-card">
+              <span class="stat-number" data-target="124">0</span>
+              <p data-translate="stat_countries">Ölkə</p>
+            </div>
+            <div class="stat-luxury-card">
+              <span class="stat-number" data-target="30" data-suffix="M+"
+                >0</span
+              >
+              <p data-translate="stat_customers">Müştəri</p>
+            </div>
+            <div class="stat-luxury-card">
+              <span class="stat-number" data-target="14" data-suffix="M+"
+                >0</span
+              >
+              <p data-translate="stat_distributors">Distribütor</p>
+            </div>
+            <div class="stat-luxury-card">
+              <span class="stat-number" data-target="13">0</span>
+              <p data-translate="stat_medals">Qızıl medal</p>
+            </div>
+            <div class="stat-luxury-card">
+              <span class="stat-number" data-target="1" data-suffix="M+"
+                >0</span
+              >
+              <p data-translate="stat_participants">İştirakçı</p>
+            </div>
+            <div class="stat-luxury-card">
+              <span class="stat-number" data-target="8.7" data-suffix="M+"
+                >0</span
+              >
+              <p data-translate="stat_travels">Ödənişsiz səyahət</p>
+            </div>
+          </div>
+
+          <ul class="fact-luxury-list">
+            <li>
+              Bu gün TİENS korporasiyasının dünyanın 124-dən çox ölkəsində rəsmi
+              nümayəndəliyi vardır və 190-dan çox ölkədə qeydiyyatdan keçmişdir.
+            </li>
+            <li>
+              Hər gün dünyada 30 milyona yaxın insan TİENS məhsullarından
+              faydalanır.
+            </li>
+            <li>
+              Korporasiyanın istehsal etdiyi məhsullar 13-cü Dünya Səhiyyə
+              Təşkilatı tərəfindən qızıl medala layiq görülüb.
+            </li>
+            <li>
+              Korporasiya fəaliyyətinə görə 20 kubok, 49 medal, 143 sertifikat
+              və 170 fəxri bayrağa layiq görülüb.
+            </li>
+            <li>
+              2016-cı ildə TİENS korporasiyası satış dövriyyəsinin həcminə görə
+              dünyanın 100 ən iri şirkəti arasında 11-ci yeri tutmuşdur.
+            </li>
+            <li>
+              Uğurlu fəaliyyətlərinə görə distribütorlar lüks maşın, yaxta,
+              təyyarə, villa mükafatları və ödənişsiz səyahətlərlə təltif
+              olunurlar.
+            </li>
+          </ul>
+
+          <div class="cooperation-box">
+            <h3>Bizimlə Əməkdaşlıq</h3>
+            <p>
+              1998-ci ildə aparıcı marketoloq və psixoloqlar tərəfindən
+              yaradılmış <strong>“UĞUR SİSTEMİ”</strong> təlimləri vasitəsilə
+              hər bir əməkdaşa qısa vaxt ərzində öz biznesini qurmaq və yüksək
+              gəlir əldə etmək imkanı verilir. Həm tibb sahəsi, həm də Jalə
+              Plaza ofis işləri üzrə çalışmaq, fəaliyyət göstərmək üçün bizə
+              müraciət edə bilərsiniz. Çalışmağa başladığınız ilk gündən
+              etibarən beynəlxalq dərəcəli lektorlarımız daim sizə dəstək
+              olacaqdır.
+            </p>
+            <p class="motto-text">
+              SİZƏ “SƏMA ŞİRİ”-NİN QANADLARI ALTINDA UĞURLU BİZNES QURMAĞI
+              ARZULAYIRIQ!
+            </p>
+          </div>
+
+          <div class="about-cta-container">
+            <a
+              class="btn-about-whatsapp"
+              href="https://wa.me/994773020060?text=Salam,%20Sizə%20%22Səma%20Şiri%22-nin%20qanadları%20altında%20uğurlu%20biznes%20qurmaq%20istəyirəm.%20Mənimlə%20WhatsApp-da%20derhal%20əlavə%20məlumat%20alada%20bilərsiz."
+              target="_blank"
+            >
+              <i class="fab fa-whatsapp"></i> Dərhal WhatsApp ilə əlaqə
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="products" class="products-section">
+      <div class="products-container">
+        <div class="section-title-box">
+          <span class="section-badge">Məhsul Kataloqu</span>
+          <h2 class="section-main-title" data-translate="products_title">
+            Rəsmi məhsullar
+          </h2>
+          <div class="title-underline"></div>
+        </div>
+
+        <div class="product-grid" id="productGrid"></div>
+      </div>
+    </section>
+
+<!-- ── PREMIUM SETS SECTION (XÜSUSİ SETLƏR) ── -->
+    <section id="sets" class="sets-section">
+      <div class="sets-container">
+        
+        <!-- Premium Yenilənmiş Bölmə Başlığı -->
+        <div class="section-title-box">
+          <span class="section-badge">Xüsusi Kombinasiyalar</span>
+          <h2 class="section-main-title" data-translate="sets_title">Xüsusi setlər</h2>
+          <div class="title-underline"></div>
+        </div>
+
+        <!-- Setlər Şəbəkəsi -->
+        <div class="set-grid">
+          
+          <!-- SET 1: Əsas Sağlamlıq Seti -->
+          <article class="set-luxury-card">
+            <div class="set-icon-header">
+              <i class="fas fa-heartbeat"></i>
+            </div>
+            <h3 data-translate="health_set">Əsas Sağlamlıq Seti</h3>
+            <p data-translate="health_desc">
+              Ürək-damar, enerji və bədən balansı üçün xüsusi seçilmiş 3 məhsul.
+            </p>
+            <div class="set-divider"></div>
+            <ul>
+              <li><i class="fas fa-check-circle"></i> Tiens Lipid Metabolic Management Tea</li>
+              <li><i class="fas fa-check-circle"></i> Tiens Multi Fiber Chewable Tablets</li>
+              <li><i class="fas fa-check-circle"></i> Tiens Cordyceps Capsules</li>
+            </ul>
+            <div class="set-footer">
+              <div class="set-price-box">
+                <span class="set-price-label" data-translate="price">Qiymət</span>
+                <span class="set-price-value">189 AZN</span>
+              </div>
+              <a href="https://wa.me/994773020060?text=Salam,%20Əsas%20Sağlamlıq%20seti%20barədə%20məlumat%20almaq%20və%20sifariş%20etmək%20istəyirəm." target="_blank" class="btn-set-whatsapp" data-translate="ask_wp">
+                WP ilə soruş <i class="fab fa-whatsapp"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- SET 2: Gözəllik və Dəri Seti -->
+          <article class="set-luxury-card">
+            <div class="set-icon-header">
+              <i class="fas fa-spa"></i>
+            </div>
+            <h3 data-translate="beauty_set">Gözəllik və Dəri Seti</h3>
+            <p data-translate="beauty_desc">
+              Dəri parıltısı və bədənin qidalanması üçün seçilmiş məhsullar.
+            </p>
+            <div class="set-divider"></div>
+            <ul>
+              <li><i class="fas fa-check-circle"></i> Tiens Cell Rejuvenation Capsules</li>
+              <li><i class="fas fa-check-circle"></i> Tiens Zinc Capsules</li>
+              <li><i class="fas fa-check-circle"></i> Tiens Grape Extract Capsules</li>
+            </ul>
+            <div class="set-footer">
+              <div class="set-price-box">
+                <span class="set-price-label" data-translate="price">Qiymət</span>
+                <span class="set-price-value">205 AZN</span>
+              </div>
+              <a href="https://wa.me/994773020060?text=Salam,%20Gözəllik%20və%20Dəri%20seti%20barədə%20məlumat%20almaq%20və%20sifariş%20etmək%20istəyirəm." target="_blank" class="btn-set-whatsapp" data-translate="ask_wp">
+                WP ilə soruş <i class="fab fa-whatsapp"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- SET 3: Valideyn və Uşaq Dəstək Seti -->
+          <article class="set-luxury-card">
+            <div class="set-icon-header">
+              <i class="fas fa-child"></i>
+            </div>
+            <h3 data-translate="parent_set">Valideyn və Uşaq Dəstək Seti</h3>
+            <p data-translate="parent_desc">
+              Uşaq və böyüklər üçün kalsium və vitamin dəstəyi ilə sağlamlıq balansı.
+            </p>
+            <div class="set-divider"></div>
+            <ul>
+              <li><i class="fas fa-check-circle"></i> Tiens Super Calcium Powder</li>
+              <li><i class="fas fa-check-circle"></i> Tiens Super Calcium Powder for Children</li>
+              <li><i class="fas fa-check-circle"></i> Tiens Selenium Supplement Capsules</li>
+            </ul>
+            <div class="set-footer">
+              <div class="set-price-box">
+                <span class="set-price-label" data-translate="price">Qiymət</span>
+                <span class="set-price-value">145 AZN</span>
+              </div>
+              <a href="https://wa.me/994773020060?text=Salam,%20Valideyn%20və%20Uşaq%20Dəstək%20seti%20barədə%20məlumat%20almaq%20və%20sifariş%20etmək%20istəyirəm." target="_blank" class="btn-set-whatsapp" data-translate="ask_wp">
+                WP ilə soruş <i class="fab fa-whatsapp"></i>
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+<section id="contact" class="contact-section">
+  <div class="contact-container">
+    
+    <div class="section-title-box">
+      <span class="section-badge">Rəsmi Ünvan</span>
+      <h2 class="section-main-title" data-translate="contact_title">Bizimlə əlaqə</h2>
+      <div class="title-underline"></div>
+    </div>
+
+    <div class="contact-grid-layout">
+      <div class="contact-luxury-card">
+        <h2>Əlaqə və ünvan</h2>
+        
+        <div class="contact-info-list">
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-map-marked-alt"></i></div>
+            <div class="contact-text">
+              <strong>Ünvan:</strong>
+              <a href="https://www.google.com/maps/place/Tiens/@40.380411,49.8427048,17.78z/data=!4m6!3m5!1s0x40307d003a703ae3:0xe9f02660a61151b6!8m2!3d40.3803701!4d49.8426556!16s%2Fg%2F11y2fjwmmc" target="_blank">Bakı, Tiens (Google Xəritə)</a>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
+            <div class="contact-text">
+              <strong>WhatsApp:</strong>
+              <a href="https://wa.me/994773020060?text=Salam,%20Tiens%20məhsulları%20barədə%20məlumat%20almaq%20istəyirəm">+994 77 302 00 60</a>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon"><i class="far fa-envelope"></i></div>
+            <div class="contact-text">
+              <strong>Email:</strong>
+              <a href="mailto:ramilkrmov@gmail.com">ramilkrmov@gmail.com</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-note-box">
+          <p>
+            <strong>Marketinq və dəstək:</strong> Rəsmi Tiens nümayəndəliyi,
+            məhsullar orijinal və sertifikatlıdır.
+          </p>
+          <p>
+            Saytda göstərilən hər məhsula kliklədikdə onun haqqında ətraflı
+            məlumat, istifadə qaydası və qiymət görünəcək.
+          </p>
+        </div>
+
+        <div class="contact-cta-wrapper">
+          <a class="btn-contact-whatsapp" href="https://wa.me/994773020060?text=Salam,%20məhsullar%20barədə%20müşahidə%20etmək%20istəyirəm." target="_blank">
+            <i class="fab fa-whatsapp"></i> WhatsApp ilə əlaqə: +994 77 302 00 60
+          </a>
+        </div>
+      </div>
+
+      <div class="map-luxury-frame">
+        <iframe
+          src="https://www.google.com/maps?q=40.3803701,49.8426556&z=17&output=embed"
+          loading="lazy"
+          allowfullscreen=""
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── PREMIUM FOOTER SECTION ── -->
+<footer class="main-luxury-footer">
+  <div class="footer-container">
+    
+    <div class="footer-grid-layout">
+      <!-- Brend və Missiya Sahəsi -->
+      <div class="footer-brand-column">
+        <div class="footer-logo">
+          <img src="https://flagcdn.com/w40/az.png" class="footer-flag" alt="Tiens Azerbaijan" />
+          <span class="footer-brand-title">Tiens Azerbaijan</span>
+        </div>
+        <p class="footer-brand-desc">
+          Şərq təbabətinin 5000 illik fəlsəfəsini qabaqcıl biotexnologiya ilə birləşdirərək, Jalə Plaza ofisimizdən sizə rəsmi və sertifikatlı sağlamlıq xidməti təqdim edirik.
+        </p>
+        <div class="footer-social-links">
+          <a href="https://wa.me/994773020060" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        </div>
+      </div>
+
+      <!-- Sürətli Keçidlər -->
+      <div class="footer-links-column">
+        <h3>Sürətli Naviqasiya</h3>
+        <ul class="footer-nav-list">
+          <li><a href="#home">Ana Səhifə</a></li>
+          <li><a href="#about">Haqqımızda</a></li>
+          <li><a href="#products">Məhsul Kataloqu</a></li>
+          <li><a href="#sets">Xüsusi Setlər</a></li>
+          <li><a href="#contact">Əlaqə və Ünvan</a></li>
+        </ul>
+      </div>
+
+      <!-- Əlaqə və Ünvan Məlumatları -->
+      <div class="footer-contact-column">
+        <h3>Rəsmi Əlaqə</h3>
+        <div class="footer-contact-items">
+          <p>
+            <i class="fab fa-whatsapp"></i>
+            <strong>WhatsApp:</strong>
+            <a href="https://wa.me/994773020060?text=Salam,%20Tiens%20saytı%20barədə%20suallarım%20var.">+994 77 302 00 60</a>
+          </p>
+          <p>
+            <i class="fas fa-map-marker-alt"></i>
+            <strong>Ünvan:</strong>
+            <a href="https://www.google.com/maps/place/Tiens/@40.380411,49.8427048,17.78z/data=!4m6!3m5!1s0x40307d003a703ae3:0xe9f02660a61151b6!8m2!3d40.3803701!4d49.8426556!16s%2Fg%2F11y2fjwmmc" target="_blank">Bakı, Tiens (Google Xəritə)</a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Məxfilik və Təhlükəsizlik Sahəsi -->
+      <div class="footer-security-column">
+        <h3>Qorunan məlumatlar</h3>
+        <div class="security-box">
+          <i class="fas fa-shield-alt security-icon"></i>
+          <p>
+            Şəxsi məlumatlarınız və müraciətləriniz tamamilə məxfidir. Data təhlükəsizliyi qaydalarına uyğun olaraq yalnız sizə göstərilən xidmətin təkmilləşdirilməsi üçün istifadə olunur.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Alt Müəllif Hüquqları Şeridi -->
+    <div class="footer-bottom-bar">
+      <p>&copy; 2026 Tiens Azerbaijan. Bütün hüquqlar qorunur. Jalə Plaza Rəsmi Təmsilçiliyi.</p>
+    </div>
+
+  </div>
+</footer>
+
+    <div class="modal-overlay" id="productModal">
+      <div class="modal-card">
+        <button class="modal-close-btn" id="closeModal">&times;</button>
+
+        <div class="modal-left">
+          <img src="" id="modalImage" alt="Məhsul Şəkli" />
+        </div>
+
+        <div class="modal-right">
+          <span class="modal-cat" id="modalCategory">Kateqoriya</span>
+          <h2 id="modalTitle">Məhsulun Adı</h2>
+
+          <div class="modal-meta">
+            <div class="modal-price-box">
+              <span class="p-val" id="modalPrice">0.00 AZN</span>
+            </div>
+          </div>
+
+          <div class="modal-scroll-area">
+            <div>
+              <span class="section-subheading">Təsvir</span>
+              <p id="modalDescription">Məhsul haqqında geniş məlumat...</p>
+            </div>
+            <div style="margin-top: 10px">
+              <span class="section-subheading">Tərkib</span>
+              <p id="modalComposition">Məhsulun tərkibi...</p>
+            </div>
+            <div style="margin-top: 10px">
+              <span class="section-subheading">Faydaları</span>
+              <ul id="modalBenefitsList"></ul>
+            </div>
+            <div style="margin-top: 10px">
+              <span class="section-subheading">İstifadə Qaydası</span>
+              <p id="modalUsage">Məhsulun istifadə qaydası...</p>
+            </div>
+          </div>
+
+          <a
+            href="#"
+            target="_blank"
+            class="btn-modal-whatsapp"
+            id="modalWhatsapp"
+          >
+            WhatsApp ilə Sifariş Et <i class="fab fa-whatsapp"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- SPIDER WEB CANVAS (Arxa planda problemsiz işləməsi üçün bura yerləşdirildi) -->
+    <canvas id="spiderWebCanvas"></canvas>
+
+    <script src="./src/js/script.js"></script>
+  </body>
+</html>
