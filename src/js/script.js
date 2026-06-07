@@ -198,7 +198,6 @@ function createProductCard(product) {
   card.innerHTML = `
           <div class="product-img-wrapper">
             <span class="category-badge">${product.category}</span>
-            <span class="price-tag-chip">${product.price}</span>
             <img src="${product.image}" alt="${product.name}" loading="lazy" />
           </div>
           <div class="product-info">
@@ -222,7 +221,6 @@ const products = [
   {
     id: 1,
     name: "Tianshi Lipid Metabolic Management Tea",
-    price: "50 AZN",
     category: "Detoks və balans",
     image:
       "https://strgimgr.umico.az/img/product/1680/85297819-bda3-4211-b082-9d2dc5b71204.jpeg",
@@ -238,7 +236,6 @@ const products = [
   {
     id: 2,
     name: "Tianshi Slimming Tea",
-    price: "50 AZN",
     category: "Çəki nəzarəti",
     image:
       "https://strgimgr.umico.az/img/product/1680/1c5b8a25-08c0-4f7f-b3c8-ba83bf5a25ef.jpeg",
@@ -254,7 +251,6 @@ const products = [
   {
     id: 3,
     name: "Tiens Multi Fiber Chewable Tablets",
-    price: "55 AZN",
     category: "Bəslənmə və həzm",
     image:
       "https://tiens.az/wp-content/uploads/2025/12/Tiens-Multi-Fiber-Chewable-Tablet.png",
@@ -268,7 +264,6 @@ const products = [
   {
     id: 4,
     name: "Tiens Chitosan Capsules",
-    price: "84.96 AZN",
     category: "Pəhriz və dəstək",
     image:
       "https://strgimgr.umico.az/sized/1680/881183-b40663d7b9ef893bf46721689b263c13.jpg",
@@ -284,7 +279,6 @@ const products = [
   {
     id: 5,
     name: "Tiens Cell Rejuvenation Capsules",
-    price: "94.52 AZN",
     category: "Gözəllik və gənclik",
     image:
       "https://strgimgr.b-cdn.net/sized/840/731100-be87cf7ea926be0d2c0497eb348b6ef6.jpg?width=384&height=384&quality=90",
@@ -299,7 +293,6 @@ const products = [
   {
     id: 6,
     name: "Tiens Grape Extract Capsules",
-    price: "119.99 AZN",
     category: "Antioksidant",
     image:
       "https://strgimgr.b-cdn.net/sized/840/881181-5c3c4a275c1abca24846acd541deb042.jpg?width=384&height=384&quality=90",
@@ -314,7 +307,6 @@ const products = [
   {
     id: 7,
     name: "Tiens Vitality Softgels",
-    price: "72.4 AZN",
     category: "Enerji və immunitet",
     image:
       "https://im-storage.jikeint.com/tiens_global/tiens_group/products/en/healthy-food/bjsp_10.png",
@@ -329,7 +321,6 @@ const products = [
   {
     id: 8,
     name: "Tiens Cordyceps Capsules",
-    price: "109 AZN",
     category: "Enerji və sport",
     image:
       "https://strgimgr.umico.az/sized/1680/773132-b30950f44ba8ad5003826b406b101f23.jpg",
@@ -344,7 +335,6 @@ const products = [
   {
     id: 9,
     name: "Tianshi Spirulina Capsules",
-    price: "82 AZN",
     category: "Vitamin və minerallar",
     image:
       "https://strgimgr.umico.az/sized/1680/881180-3b5ef63d402fb0234055f1d7e326a53d.jpg",
@@ -358,7 +348,6 @@ const products = [
   {
     id: 10,
     name: "Tiens Fructooligosaccharide",
-    price: "30 AZN",
     category: "Həzm və flora",
     image:
       "https://strgimgr.b-cdn.net/img/product/840/d236a3cd-5049-4383-b768-6284aa0c0937.jpeg?width=384&height=384&quality=90",
@@ -372,7 +361,6 @@ const products = [
   {
     id: 11,
     name: "Tiens Zinc Capsules",
-    price: "30 AZN",
     category: "İmmunitet",
     image:
       "https://strgimgr.b-cdn.net/sized/840/716047-5c325b184240557320a33c05be3f6ba2.jpg?width=384&height=384&quality=90",
@@ -386,7 +374,6 @@ const products = [
   {
     id: 12,
     name: "Tiens Nutrient Super Calcium Powder",
-    price: "69.99 AZN",
     category: "Kalsium və sümük",
     image:
       "https://strgimgr.b-cdn.net/sized/840/716049-0e6e3d72cd5ddc2c392d8825a1dcd962.jpg?width=384&height=384&quality=90",
@@ -400,7 +387,6 @@ const products = [
   {
     id: 13,
     name: "Tiens Super Calcium Powder for Children",
-    price: "59.84 AZN",
     category: "Uşaq sağlamlığı",
     image: "https://www.tiens-so.com/cdn/shop/products/cal3.webp?v=1654272650",
     description:
@@ -413,7 +399,6 @@ const products = [
   {
     id: 14,
     name: "Tiens Super Calcium Powder with Metabolic Factors",
-    price: "83.90 AZN",
     category: "Metabolizm",
     image:
       "https://img.drz.lazcdn.com/g/kf/S7048534c91134351841344d3be42155e6.jpg_720x720q80.jpg",
@@ -428,7 +413,6 @@ const products = [
   {
     id: 15,
     name: "Tiens Super Calcium Capsules with Lecithin",
-    price: "35.97 AZN",
     category: "Kalsium və beyin",
     image:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRl__gGtiPcyGYG7QBMtVEnArLTb8tVPTE2Mg&s",
@@ -442,7 +426,6 @@ const products = [
   {
     id: 16,
     name: "Tiens Selenium Supplement Capsules",
-    price: "59.99 AZN",
     category: "Antioksidant",
     image:
       "https://strgimgr.umico.az/img/product/1680/68100aab-a9bc-4aab-a04e-e56edffdf969.jpeg",
@@ -457,7 +440,6 @@ const products = [
   {
     id: 17,
     name: "Tiens Glucosamine Capsules",
-    price: "50.54 AZN",
     category: "Oynaqlar",
     image: "https://m.media-amazon.com/images/I/41GWDnRowiL.jpg",
     description:
@@ -471,7 +453,6 @@ const products = [
   {
     id: 18,
     name: "Tiens OreCare Herbal Toothpaste",
-    price: "24.64 AZN",
     category: "Ağız gigiyenası",
     image:
       "https://img.drz.lazcdn.com/static/pk/p/22d4d5e0596e98ec7c79ae95c028e212.jpg_720x720q80.jpg",
@@ -486,7 +467,6 @@ const products = [
   {
     id: 19,
     name: "Tiens Airiz Ozon-Anion",
-    price: "70.40 AZN",
     category: "Hava təmizləyici",
     image:
       "https://biovitamin.az/wp-content/uploads/2026/02/tiens-ozon-anion-gigiyenik-bez.webp",
@@ -501,7 +481,6 @@ const products = [
   {
     id: 20,
     name: "Tiens Bracelet (White)",
-    price: "207.68 AZN",
     category: "Əl üzüyü",
     image:
       "https://bbtmarket.com/cdn/shop/files/unbekannt-78833_1024x.jpg?v=1744722428",
@@ -516,7 +495,6 @@ const products = [
   {
     id: 21,
     name: "Tiens Bracelet (Gold)",
-    price: "207.68 AZN",
     category: "Əl üzüyü",
     image:
       "https://i.pinimg.com/474x/ab/cd/d3/abcdd357bf445e8ea38ddaac5dc7cb99.jpg",
@@ -531,7 +509,6 @@ const products = [
   {
     id: 22,
     name: "Tiens Bracelet (Cristal Black)",
-    price: "207.68 AZN",
     category: "Əl üzüyü",
     image:
       "https://image-cdn.ubuy.com/400_400_100/67f2b7d1cf6f0256047ea482-tiens-ti-energy-bracelet-crystal-black.jpg",
@@ -545,7 +522,6 @@ const products = [
   {
     id: 23,
     name: "Tiens Bracelet (Elegant Black)",
-    price: "207.68 AZN",
     category: "Əl üzüyü",
     image:
       "https://5.imimg.com/data5/SELLER/Default/2023/1/BP/KC/MN/134310639/untitled-500x500.png",
@@ -560,7 +536,6 @@ const products = [
   {
     id: 24,
     name: "Tiens Ishoukan",
-    price: "466.40 AZN",
     category: "Gözəllik cihazı",
     image:
       "https://tiens.com.ua/wp-content/uploads/2025/03/381810383_w1280_h1280_ishowkan.webp",
@@ -575,7 +550,6 @@ const products = [
   {
     id: 25,
     name: "Tiens Foot Massage Device",
-    price: "1848 AZN",
     category: "Masaj cihazı",
     image: "https://i.ebayimg.com/images/g/DrUAAOSw7pllr6oG/s-l1200.png",
     description:
@@ -589,7 +563,6 @@ const products = [
   {
     id: 26,
     name: "Tiens Cosmetic Device",
-    price: "519.2 AZN",
     category: "Kosmetika cihazı",
     image:
       "https://tiens.az/wp-content/uploads/2025/11/tiens-cilvaris-kosmetik-cihaz.webp",
@@ -758,7 +731,6 @@ function initProductCatalog() {
     card.innerHTML = `
       <div class="product-img-wrapper">
         <span class="category-badge">${product.category}</span>
-        <span class="price-tag-chip">${product.price}</span>
         <img src="${product.image}" alt="${product.name}" loading="lazy" />
       </div>
       <div class="product-info">
@@ -781,7 +753,6 @@ const modal = document.getElementById("productModal");
 const modalTitle = document.getElementById("modalTitle");
 const modalImage = document.getElementById("modalImage");
 const modalDescription = document.getElementById("modalDescription");
-const modalPrice = document.getElementById("modalPrice");
 const modalUsage = document.getElementById("modalUsage");
 const modalComposition = document.getElementById("modalComposition");
 const modalBenefitsList = document.getElementById("modalBenefitsList");
@@ -795,7 +766,6 @@ function showProductModal(product) {
   modalImage.src = product.image;
   modalImage.alt = product.name;
   modalDescription.textContent = product.description;
-  modalPrice.textContent = product.price;
   modalUsage.textContent = product.usage;
   modalComposition.textContent = product.composition;
   modalCategory.textContent = product.category;
@@ -811,7 +781,7 @@ function showProductModal(product) {
   }
 
   const encodedText = encodeURIComponent(
-    `Salam, Tiens Azerbaijan. Rəsmi saytınızdan bu məhsulu sifariş etmək istəyirəm:\n📦 *${product.name}*\n💰 Qiymət: ${product.price}`,
+    `Salam, Tiens Azerbaijan. Rəsmi saytınızdan bu məhsulu sifariş etmək istəyirəm:\n📦 *${product.name}*\n}`,
   );
   modalWhatsapp.href = `https://wa.me/994773020060?text=${encodedText}`;
 }
@@ -945,7 +915,6 @@ const translations = {
     parent_set: "Valideyn və Uşaq Dəstək Seti",
     parent_desc:
       "Uşaq və böyüklər üçün kalsium və vitamin dəstəyi ilə sağlamlıq balansı.",
-    price: "Qiymət",
     ask_wp: "WP ilə soruş",
 
     // Contact Section
@@ -956,7 +925,7 @@ const translations = {
     contact_note_1:
       "Marketinq və dəstək: Rəsmi Tiens nümayəndəliyi, məhsullar orijinal və sertifikatlıdır.",
     contact_note_2:
-      "Saytda göstərilən hər məhsula kliklədikdə onun haqqında ətraflı məlumat, istifadə qaydası və qiymət görünəcək.",
+      "Saytda göstərilən hər məhsula kliklədikdə onun haqqında ətraflı məlumat, istifadə qaydası görünəcək.",
     btn_whatsapp_contact: "WhatsApp ilə əlaqə: +994 77 302 00 60",
 
     // Footer
@@ -1026,7 +995,6 @@ const translations = {
     parent_set: "Ebeveyn ve Çocuk Destek Seti",
     parent_desc:
       "Çocuklar ve yetişkinler için kalsiyum ve vitamin desteği ile sağlık dengesi.",
-    price: "Fiyat",
     ask_wp: "WP ilə Sorun",
 
     // Contact Section
@@ -1107,7 +1075,6 @@ const translations = {
     parent_set: "Parent & Child Support Set",
     parent_desc:
       "Health balance with calcium and vitamin support for children and adults.",
-    price: "Price",
     ask_wp: "Ask via WP",
 
     // Contact Section
@@ -1118,7 +1085,7 @@ const translations = {
     contact_note_1:
       "Marketing and Support: Official Tiens representation, products are original and certified.",
     contact_note_2:
-      "Clicking on each product displayed on the site will show detailed information, usage instructions, and price.",
+      "Clicking on each product displayed on the site will show detailed information, usage instructions.",
     btn_whatsapp_contact: "Contact via WhatsApp: +994 77 302 00 60",
 
     // Footer
@@ -1188,7 +1155,6 @@ const translations = {
     parent_set: "Набор поддержки родителей и детей",
     parent_desc:
       "Баланс здоровья с поддержкой кальция и витаминов для детей и взрослых.",
-    price: "Цена",
     ask_wp: "Спросить через WP",
 
     // Contact Section
